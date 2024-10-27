@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(circle at 50% 50%, #e0eafc, #cfdef3); /* Radial gradient background */
+    color: #333; /* Dark text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center align text */
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.welcome-container {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 20px; /* Rounded corners */
+    padding: 50px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    max-width: 600px; /* Limit the width */
+    width: 90%; /* Responsive width */
+    transform: translateY(-20px);
+    opacity: 0; /* Initial opacity for animation */
+    animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 2.8em; /* Large title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+span {
+    color: #007bff; /* Highlight color */
+    text-shadow: 2px 2px 5px rgba(0, 123, 255, 0.5); /* Soft text shadow */
+}
+
+.main-message {
+    font-size: 1.2em; /* Slightly larger text for the message */
+    margin: 20px 0; /* Space above and below */
+    color: #444; /* Softer text color */
+}
+
+.animation-container {
+    position: relative; /* Position for the animated elements */
+    height: 200px; /* Fixed height for the animation */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.floating-elements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.element {
+    position: absolute;
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    background-color: #ff758c; /* Circle color */
+    border-radius: 50%;
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s; /* No delay */
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    background-color: #ff7eb3; /* Square color */
+    top: 50%;
+    left: 40%;
+    animation-delay: 1s; /* 1 second delay */
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 80px solid #007bff; /* Triangle color */
+    top: 30%;
+    left: 60%;
+    animation-delay: 2s; /* 2 seconds delay */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    margin-top: 30px; /* Space above the footer */
+    font-size: 0.9em; /* Smaller footer text */
+    color: #777; /* Light gray for footer */
+}
